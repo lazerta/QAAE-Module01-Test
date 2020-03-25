@@ -21,14 +21,14 @@
 ## Postgres  exercise 
 
 
-  ```postgresql
+  ```sql
 SELECT starttime FROM cd.members AS m INNER JOIN cd.bookings AS b USING(memid) where 
 m.firstname = 'David' AND m.surname = 'Farrell';
   ```
 
 ---
 
-```postgresql
+```sql
  SElECT starttime AS start , f.name FROM cd.bookings AS b INNER JOIN cd.facilities AS f 
  USING(facid) 
  WHERE
@@ -38,13 +38,13 @@ starttime >= '2012-09-21' AND
 ORDER BY starttime;     
 ```
 ---
-```postgresql
+```sql
 SELECT DISTINCT  m.firstname,m.surname FROM cd.members AS m  INNER JOIN cd.members AS m2
 on m.memid = m2.recommendedby
 ORDER BY surname,firstname;
 ```
 --
-```postgresql
+```sql
 SELECT   m.firstname AS memfname,m.surname AS memsname,
 m2.firstname AS recfname, m2.surname AS recsname
 FROM 
@@ -57,7 +57,7 @@ ORDER BY  memsname, memfname;
 
 
 ---
-```postgresql
+```sql
 SELECT DISTINCT CONCAt(m.firstname, ' ', m.surname) AS member,
 	(SELECT  CONCAt(m2.firstname, ' ', m2.surname) AS recommender 
 		FROM cd.members AS m2 
@@ -68,7 +68,7 @@ SELECT DISTINCT CONCAt(m.firstname, ' ', m.surname) AS member,
 ORDER BY member; 
 ```
 ---
-```postgresql
+```sql
 SELECT DISTINCT CONCAT(m.firstname,' ', m.surname) AS member, f.name AS	facility
 
 FROM cd.members AS m  INNER JOIN cd.bookings AS b USING(memid)
@@ -77,7 +77,7 @@ WHERE  f.name LIKE '%Tennis Court%'
 
 ```
 ---
-```postgresql
+```sql
 SELECT  CONCAT( m.firstname, ' ', m.surname ) AS member, 
 	f.name AS facility, 
 	CASE 
