@@ -13,7 +13,9 @@
 [click Me](./sql.md)
 
 ## Deployed Web IP 
-(http://52.15.70.223/)[http://52.15.70.223/] 
+[Personal website](http://ec2-3-15-151-133.us-east-2.compute.amazonaws.com/)
+
+
 ## Picture  For HackerRank
 ![hackerRank](./images/HackerRank.png)
 
